@@ -1,17 +1,13 @@
-require 'rubygems' unless defined? Gem # rubygems is only needed in 1.8
-
 require 'yaml'
 require 'plist'
 
 config_file = 'config.yml'
 
-
-workflow_home=File.expand_path("~/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows")
+workflow_home = File.expand_path("~/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows")
 
 $config = YAML.load_file(config_file)
 $config["bundleid"] = "#{$config["domain"]}.#{$config["id"]}"
 $config["plist"] = File.join($config["path"], "info.plist")
-$config["workflow_dbx"] = File.join(File.expand_path($config["dropbox"]), "/Alfred.alfredpreferences/workflows")
 
 # import sub-rakefiles
 FileList['*/Rakefile'].each { |file|
@@ -19,7 +15,6 @@ FileList['*/Rakefile'].each { |file|
 }
 
 task :config do
-
   info = Plist::parse_xml($config["plist"])
   unless info['bundleid'].eql?($config["bundleid"])
     info['bundleid'] = $config["bundleid"]
