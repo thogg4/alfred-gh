@@ -2,6 +2,7 @@ require 'bundler/setup'
 
 require 'alfred'
 require 'httparty'
+require './alfred_gh'
 
 Alfred.with_friendly_error do |alfred|
   alfred.with_cached_feedback do
@@ -31,7 +32,6 @@ Alfred.with_friendly_error do |alfred|
     fb.put_cached_feedback
   end
 
-  puts fb.to_alfred(query)
+  puts AlfredGh.alfred_xml(query, fb.items)
 
 end
-
