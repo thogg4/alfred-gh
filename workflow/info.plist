@@ -71,7 +71,7 @@
 				<key>script</key>
 				<string>ruby ./main.rb {query}</string>
 				<key>title</key>
-				<string>github stars</string>
+				<string>Search Github</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
