@@ -12,9 +12,8 @@ Alfred.with_friendly_error do |alfred|
 
   query = ARGV[0]
 
-  if !alfred.feedback.expired?
-    fb = alfred.feedback.get_cached_feedback
-  else
+  fb = alfred.feedback.get_cached_feedback
+  if !fb
     fb = alfred.feedback
     starred_url = "https://api.github.com/users/#{github_username}/starred"
 
