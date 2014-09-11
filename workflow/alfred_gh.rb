@@ -14,8 +14,10 @@ module AlfredGh
       items.each do |item|
         document << item.to_xml if item.match?(query)
       end
-      document << search_item(query).to_xml if !document.has_elements?
     end
+
+    document << search_item(query).to_xml
+
     document.to_s
   end
 

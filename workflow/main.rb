@@ -16,7 +16,7 @@ Alfred.with_friendly_error do |alfred|
   fb = alfred.feedback.get_cached_feedback
   if !fb
     fb = alfred.feedback
-    starred_url = "https://api.github.com/users/#{github_username}/starred"
+    starred_url = "https://api.github.com/users/#{github_username}/starred?per_page=100"
 
     repos = HTTParty.get(starred_url, headers: { 'User-Agent' => 'Alfred-Github-Workflow', 'Accept' => '*/*' })
 
