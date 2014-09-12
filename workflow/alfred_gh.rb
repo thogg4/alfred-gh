@@ -6,6 +6,8 @@ module AlfredGh
     document = REXML::Element.new("items")
     items.sort!
 
+    document.push(search_item(query).to_xml)
+
     if query.empty?
       items.each do |item|
         document << item.to_xml
@@ -15,8 +17,6 @@ module AlfredGh
         document << item.to_xml if item.match?(query)
       end
     end
-
-    document << search_item(query).to_xml
 
     document.to_s
   end

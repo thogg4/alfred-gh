@@ -10,13 +10,14 @@ Alfred.with_friendly_error do |alfred|
   end
 
   github_username = File.read('../.github_username').strip
+  github_token = File.read('../.github_token').strip
 
   query = ARGV[0]
 
   fb = alfred.feedback.get_cached_feedback
   if !fb
     fb = alfred.feedback
-    starred_url = "https://api.github.com/users/#{github_username}/starred?per_page=100"
+    starred_url = "https://api.github.com/users/#{github_username}/starred?access_token=#{github_token}&per_page=100"
 
     repos = HTTParty.get(starred_url, headers: { 'User-Agent' => 'Alfred-Github-Workflow', 'Accept' => '*/*' })
 

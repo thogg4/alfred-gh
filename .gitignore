@@ -2,3 +2,4 @@ workflow/.bundle
 workflow/bundle
 .ruby-version
 .github_username
+.github_token
