@@ -6,7 +6,7 @@ require './alfred_gh'
 
 Alfred.with_friendly_error do |alfred|
   alfred.with_cached_feedback do
-    use_cache_file :expire => 3600
+    use_cache_file :expire => 86400
   end
 
   github_username = File.read('../.github_username').strip
