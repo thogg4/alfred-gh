@@ -1,8 +1,8 @@
 # Alfred GH
 
 ### How to use
-* create .github-username file that contains only the username
-* create .github-token file that contains only the oauth token assigned to the account
+* create ~/.github-username file that contains only the username
+* create ~/.github-token file that contains only the oauth token assigned to the account
 * run install commands:
 ``` ruby
 rake bundle:install

@@ -9,8 +9,8 @@ Alfred.with_friendly_error do |alfred|
     use_cache_file :expire => 86400
   end
 
-  github_username = File.read('../.github_username').strip
-  github_token = File.read('../.github_token').strip
+  github_username = `cat ~/.github_username`.strip
+  github_token = `cat ~/.github_token`.strip
 
   query = ARGV[0]
 

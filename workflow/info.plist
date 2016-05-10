@@ -66,10 +66,18 @@
 				<integer>62</integer>
 				<key>keyword</key>
 				<string>gh</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>finding...</string>
 				<key>script</key>
-				<string>ruby ./main.rb {query}</string>
+				<string>~/.rbenv/shims/ruby ./main.rb {query}</string>
 				<key>title</key>
 				<string>Search Github</string>
 				<key>type</key>
